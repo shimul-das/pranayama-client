@@ -20,6 +20,9 @@ import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/AdminHome.jsx/AdminHome";
 import Errorpage from "../Layout/ErrorPage";
 import Error404 from "../pages/Error404/Error404";
+import StudentRoute from "./StudentRoute";
+import InstructorRoute from "./InstructorRoute";
+import InstructorHome from "../pages/Dashboard/InstructorHome/InstructorHome";
 
 
 
@@ -60,7 +63,7 @@ import Error404 from "../pages/Error404/Error404";
       children: [
         {
           path:'userhome',
-          element:<UserHome></UserHome>
+          element:<StudentRoute><UserHome></UserHome></StudentRoute>
 
         },
         {
@@ -88,6 +91,11 @@ import Error404 from "../pages/Error404/Error404";
         {
           path: 'manageitems',
           element: <AdminRoute><ManageItems></ManageItems></AdminRoute>
+        },
+        /////Instructor Route
+        {
+          path:'instructorhome',
+          element:<InstructorRoute><InstructorHome></InstructorHome></InstructorRoute>
         }
       ]
     },
