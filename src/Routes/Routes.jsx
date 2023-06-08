@@ -25,6 +25,8 @@ import InstructorRoute from "./InstructorRoute";
 import InstructorHome from "../pages/Dashboard/InstructorHome/InstructorHome";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
+import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
+
 
 
 
@@ -91,8 +93,8 @@ import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
           element: <AddItem></AddItem>
         },
         {
-          path: 'manageitems',
-          element: <AdminRoute><ManageItems></ManageItems></AdminRoute>
+          path: 'manageclasses',
+          element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
         },
         /////Instructor Route
         {
