@@ -143,7 +143,7 @@ const Dashboard = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/dashboard/history">
+                                <NavLink to="/dashboard/addclass">
                                     <FaWallet></FaWallet> Add Classes
                                 </NavLink>
                             </li>

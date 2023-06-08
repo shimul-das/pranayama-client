@@ -23,6 +23,7 @@ import Error404 from "../pages/Error404/Error404";
 import StudentRoute from "./StudentRoute";
 import InstructorRoute from "./InstructorRoute";
 import InstructorHome from "../pages/Dashboard/InstructorHome/InstructorHome";
+import AddClass from "../pages/Dashboard/AddClass/AddClass";
 
 
 
@@ -96,6 +97,10 @@ import InstructorHome from "../pages/Dashboard/InstructorHome/InstructorHome";
         {
           path:'instructorhome',
           element:<InstructorRoute><InstructorHome></InstructorHome></InstructorRoute>
+        },
+        {
+          path:"addclass",
+          element:<InstructorRoute><AddClass></AddClass></InstructorRoute>
         }
       ]
     },
