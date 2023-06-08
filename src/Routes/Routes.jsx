@@ -24,6 +24,7 @@ import StudentRoute from "./StudentRoute";
 import InstructorRoute from "./InstructorRoute";
 import InstructorHome from "../pages/Dashboard/InstructorHome/InstructorHome";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
+import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 
 
 
@@ -101,6 +102,10 @@ import AddClass from "../pages/Dashboard/AddClass/AddClass";
         {
           path:"addclass",
           element:<InstructorRoute><AddClass></AddClass></InstructorRoute>
+        },
+        {
+          path:"myclasses",
+          element:<InstructorRoute><MyClasses></MyClasses></InstructorRoute>
         }
       ]
     },
