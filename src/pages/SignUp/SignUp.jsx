@@ -272,7 +272,7 @@ const SignUp = () => {
 
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        const saveUser = { name: data.name, email: data.email,role:"student"};
+                        const saveUser = { name: data.name, email: data.email,image:data.photoURL, role:"student"};
                         fetch("http://localhost:5000/users", {
                             method: "POST",
                             headers: {
@@ -306,7 +306,7 @@ const SignUp = () => {
             <Helmet>
                 <title>Bistro Boss | Sign Up</title>
             </Helmet>
-            <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
+            <div className="relative my-3 flex flex-col justify-center min-h-screen overflow-hidden">
                 <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-rose-600/40 ring  ring-purple-600 lg:max-w-xl">
                     <h1 className="text-3xl font-semibold text-center text-purple-700 underline uppercase decoration-wavy">
                         Sign Up

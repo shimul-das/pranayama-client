@@ -3,7 +3,7 @@ import React from 'react'
 const InstructorHome = () => {
   return (
     <div>
-        <h2>Regular user home</h2>
+        <h2>Istructor user home</h2>
     </div>
   )
 }

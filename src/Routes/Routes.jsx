@@ -86,7 +86,7 @@ import InstructorHome from "../pages/Dashboard/InstructorHome/InstructorHome";
         },
         {
           path: 'addItem',
-          element: <AdminRoute><AddItem></AddItem></AdminRoute>
+          element: <AddItem></AddItem>
         },
         {
           path: 'manageitems',
