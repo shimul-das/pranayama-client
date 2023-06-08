@@ -336,13 +336,13 @@ const Navbar = () => {
                   Home
                 </Link>
                 <Link
-                  to="/about"
+                  to="/instructors"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Instructors
                 </Link>
                 <Link
-                  to="/services"
+                  to="/approvedclass"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Classes
@@ -467,13 +467,13 @@ const Navbar = () => {
               Home
             </Link>
             <Link
-              to="/about"
+              to="/instructors"
               className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Instructors
             </Link>
             <Link
-              to="/services"
+              to="/approvedclass"
               className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Classes

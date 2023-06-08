@@ -26,6 +26,8 @@ import InstructorHome from "../pages/Dashboard/InstructorHome/InstructorHome";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
+import Instructors from "../pages/Instructors/Instructors";
+import ApprovedClass from "../pages/ApprovedClass/ApprovedClass";
 
 
 
@@ -40,8 +42,12 @@ import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
             element: <Home></Home>
         }, 
         {
-          path: 'menu', 
-          element: <Menu></Menu>
+          path: 'instructors', 
+          element: <Instructors></Instructors>
+        },
+        {
+          path: 'approvedclass', 
+          element: <ApprovedClass></ApprovedClass>
         },
         {
           path: 'order/:category',

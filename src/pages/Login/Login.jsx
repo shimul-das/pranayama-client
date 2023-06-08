@@ -23,6 +23,7 @@ const Login = () => {
     const [passwordInputType, setPasswordInputType] = useState("password");
 
     const from = location.state?.from?.pathname || "/";
+    console.log(location)
 
     const  onSubmit  = (data) => {
         console.log(data.email, data.password);
