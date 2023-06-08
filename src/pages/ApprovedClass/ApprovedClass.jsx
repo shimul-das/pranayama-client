@@ -115,17 +115,19 @@ const ApprovedClass = () => {
           <p>No classes found.</p>
         ) : (
           classes.map((classItem) => (
-            <div key={classItem._id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 p-4">
+            <div key={classItem._id} className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 p-4 ${classItem.availableSeats === 0 ? "bg-red-200" : ""}`}>
               <div className="bg-white border border-purple-600 rounded-lg p-4">
                 <img src={classItem.image} alt={classItem.name} className="w-full h-40 object-cover mb-4" />
                 <p className="text-lg font-bold">{classItem.name}</p>
-                <p>Instructor: {classItem.instructor}</p>
+                <p>Instructor: {classItem.instructorName}</p>
                 <p>Available Seats: {classItem.availableSeats}</p>
                 <p>Price: {classItem.price}</p>
                 <button
-                  disabled={classItem.availableSeats === 0 || (user && (user.isAdmin || user.isInstructor))}
+                  disabled={classItem.availableSeats === 0 || (user && (isAdmin || isInstructor))}
                   onClick={() => handleSelectClass(classItem._id)}
-                  className="mt-4 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700"
+                  className={`mt-4 px-4 py-2 rounded-lg hover:bg-purple-700 ${
+                    classItem.availableSeats === 0 || (user && (isAdmin || isInstructor)) ? "bg-gray-400" : "bg-purple-600 text-white"
+                  }`}
                 >
                   Select
                 </button>
