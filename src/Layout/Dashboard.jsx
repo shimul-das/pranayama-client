@@ -60,13 +60,11 @@
 // export default Dashboard;
 import { NavLink, Outlet } from "react-router-dom";
 import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
-import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 import useStudent from "../hooks/useStudent";
 
 const Dashboard = () => {
-    const [cart] = useCart();
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
     const [isStudent] = useStudent();
@@ -118,18 +116,12 @@ const Dashboard = () => {
                                     <FaWallet></FaWallet>My Enrolled Class
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink to="/dashboard/mycart">
-                                    <FaShoppingCart></FaShoppingCart> My Cart
-                                    <span className="badge inl badge-secondary">+{cart?.length || 0}</span>
-                                </NavLink>
-                            </li>
                         </>
                     ) : isInstructor ? (
                         <>
                             <li>
                                 <NavLink to="/dashboard/instructorhome">
-                                    <FaWallet></FaWallet> Instructor Home
+                                <FaHome></FaHome> Instructor Home
                                 </NavLink>
                             </li>
                             <li>

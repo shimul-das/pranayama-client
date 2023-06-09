@@ -32,13 +32,17 @@
 
 import { useEffect, useState } from "react";
 import useClasses from "../../../hooks/useClasses";
+import { Helmet } from "react-helmet-async";
 
 const MyClasses = () => {
   const [classes, refetch] = useClasses();
 
   return (
     <div className="m-5">
-      <h1 className="text-2xl text-center text-blue-600">Classes Added by Instructor: {classes.length}</h1>
+      <Helmet>
+        <title>Pranayama | Instructor Classes</title>
+      </Helmet>
+      <h1 className="text-2xl text-center text-blue-600">Total Classes: {classes.length}</h1>
       {classes.length === 0 ? (
         <p>No classes found.</p>
       ) : (
@@ -47,6 +51,8 @@ const MyClasses = () => {
             <div key={classItem._id} className="border border-purple-600">
               <div className="p-4">
                 <h5 className="font-bold mb-2">Class {index + 1}</h5>
+                <img  src={classItem.image} alt="" />
+                <p className="mb-2 pt-2">Class Name: {classItem.className}</p>
                 <p className="mb-2">Status: {classItem.status}</p>
                 <p className="mb-2">
                   Total Enrolled Students: {classItem.enrolledStudent}

@@ -1114,7 +1114,7 @@ const ManageClasses = () => {
   return (
     <div className="w-full">
       <Helmet>
-        <title>Bistro Boss | All Classes</title>
+        <title>Pranayama | Manage Classes</title>
       </Helmet>
       <h3 className="text-3xl font-semibold my-4">All Classes</h3>
       <div className="overflow-x-auto">
