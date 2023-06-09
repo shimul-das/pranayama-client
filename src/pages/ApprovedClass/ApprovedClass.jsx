@@ -69,11 +69,14 @@ import useAdmin from "../../hooks/useAdmin";
 import {useLocation, useNavigate } from 'react-router-dom';
 import useStudent from "../../hooks/useStudent";
 import useInstructor from "../../hooks/useInstructor";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const ApprovedClass = () => {
   const [classes, setClasses] = useState([]);
   const location = useLocation();
   const navigate = useNavigate();
+  const [axiosSecure] = useAxiosSecure();
   const { user } = useContext(AuthContext);
   const [isAdmin] = useAdmin();
   const [isStudent] = useStudent();
@@ -94,18 +97,63 @@ const ApprovedClass = () => {
     fetchData();
   }, []);
 
-  const handleSelectClass = (classId) => {
+//   const handleSelectClass = (classId) => {
+//     if (!user) {
+//       alert("Please log in before selecting the course.");
+//       navigate("/login", { state: { from: location } });
+//       return;
+//     }
+
+//     // Add your class selection logic here
+//     // ...
+
+//     console.log("Class selected:", classId);
+//   };
+
+const handleSelectClass = async (classItem) => {
     if (!user) {
-      alert("Please log in before selecting the course.");
+      Swal.fire({
+        icon: "warning",
+        text: "Please log in before selecting the course.",
+        confirmButtonText: "OK",
+      });
       navigate("/login", { state: { from: location } });
       return;
     }
-
-    // Add your class selection logic here
-    // ...
-
-    console.log("Class selected:", classId);
+  
+    const selectedClass = {
+      className: classItem.className,
+      instructorName: classItem.instructorName,
+      instructorEmail: classItem.instructorEmail,
+      userEmail:user.email,
+      availableSeats: classItem.availableSeats,
+      price: classItem.price,
+      image: classItem.image,
+      enrolledStudent: classItem.enrolledStudent
+    };
+  
+    try {
+      await axiosSecure.post("/selectclass", selectedClass);
+      console.log("Class selected:", classItem._id);
+      Swal.fire({
+        icon: "success",
+        text: "Class selected!",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        icon: "error",
+        text: "Failed to select class",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+    }
   };
+  
+  
+
 
   return (
     <div>
@@ -124,7 +172,8 @@ const ApprovedClass = () => {
                 <p>Price: {classItem.price}</p>
                 <button
                   disabled={classItem.availableSeats === 0 || (user && (isAdmin || isInstructor))}
-                  onClick={() => handleSelectClass(classItem._id)}
+                //   disabled={!user || (classItem.availableSeats === 0) || (user && (isAdmin || isInstructor))}
+                  onClick={() => handleSelectClass(classItem)}
                   className={`mt-4 px-4 py-2 rounded-lg hover:bg-purple-700 ${
                     classItem.availableSeats === 0 || (user && (isAdmin || isInstructor)) ? "bg-gray-400" : "bg-purple-600 text-white"
                   }`}

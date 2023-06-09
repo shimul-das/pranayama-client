@@ -28,6 +28,8 @@ import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
 import Instructors from "../pages/Instructors/Instructors";
 import ApprovedClass from "../pages/ApprovedClass/ApprovedClass";
+import MyselectedClass from "../pages/Dashboard/MyselectedClass/MyselectedClass";
+import MyenrolledClass from "../pages/Dashboard/MyenrolledClass/MyenrolledClass";
 
 
 
@@ -74,6 +76,16 @@ import ApprovedClass from "../pages/ApprovedClass/ApprovedClass";
         {
           path:'userhome',
           element:<StudentRoute><UserHome></UserHome></StudentRoute>
+
+        },
+        {
+          path:'myselectedclass',
+          element:<StudentRoute><MyselectedClass></MyselectedClass></StudentRoute>
+
+        },
+        {
+          path:'myenrolledclass',
+          element:<StudentRoute><MyenrolledClass></MyenrolledClass></StudentRoute>
 
         },
         {
