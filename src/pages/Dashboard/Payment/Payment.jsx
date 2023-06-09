@@ -94,7 +94,6 @@ const Payment = () => {
             // Handle error fetching item data
         }
     };
-    console.log(itemData )
 
     return (
         <div>
