@@ -86,6 +86,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useEffect } from 'react';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const MyselectedClasses = () => {
     const [selectedClasses, setSelectedClasses] = useState([]);
@@ -131,7 +132,10 @@ const MyselectedClasses = () => {
 
     return (
         <div className='m-5'>
-            <h1>My Selected Classes</h1>
+            <Helmet>
+                <title>Pranayama | Student Select Classes</title>
+            </Helmet>
+            <h1 className='text-2xl text-center  p-2'>Total Sected Classes: <span className='text-purple-700'>{selectedClasses.length}</span></h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
                 {selectedClasses.length === 0 ? (
                     <p>No selected classes found.</p>

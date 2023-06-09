@@ -59,7 +59,7 @@
 
 // export default Dashboard;
 import { NavLink, Outlet } from "react-router-dom";
-import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
+import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers, FaAtlas, FaOdnoklassniki, FaBookOpen } from 'react-icons/fa';
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 import useStudent from "../hooks/useStudent";
@@ -70,7 +70,7 @@ const Dashboard = () => {
     const [isStudent] = useStudent();
 
     return (
-        <div className="drawer drawer-mobile">
+        <div className="drawer drawer-mobile ">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">
@@ -80,7 +80,7 @@ const Dashboard = () => {
             </div>
             <div className="drawer-side bg-[#7E22CE]">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80">
+                <ul className="menu p-4 w-80 text-[#F79256]">
                     {isAdmin ? (
                         <>
                             <li>
@@ -126,12 +126,12 @@ const Dashboard = () => {
                             </li>
                             <li>
                                 <NavLink to="/dashboard/addclass">
-                                    <FaWallet></FaWallet> Add Classes
+                                    <FaAtlas></FaAtlas> Add Classes
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/myclasses">
-                                    <FaWallet></FaWallet> My Classes
+                                    <FaBook></FaBook> My Classes
                                 </NavLink>
                             </li>
 
@@ -145,13 +145,18 @@ const Dashboard = () => {
                     <li>
                         <NavLink to="/">
                             <FaHome></FaHome> Home
-                        </NavLink>{" "}
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/menu"> Our Menu</NavLink>
+                        <NavLink to="/instructors">
+                            <FaOdnoklassniki></FaOdnoklassniki> Instructors
+                        </NavLink>
                     </li>
+                    
                     <li>
-                        <NavLink to="/order/salad">Order Food</NavLink>
+                        <NavLink to="/approvedclass">
+                            <FaBookOpen></FaBookOpen> Classes
+                        </NavLink>
                     </li>
                 </ul>
             </div>

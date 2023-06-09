@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Instructors = () => {
     const [instructors, setInstructors] = useState([]);
@@ -20,6 +21,9 @@ const Instructors = () => {
 
     return (
         <div className="m-5">
+            <Helmet>
+                <title>Pranayama | All Instructors</title>
+            </Helmet>
             <h1 className="text-3xl m-5 font-semibold text-center text-purple-700 underline uppercase decoration-wavy">
                 Instructors
             </h1>
