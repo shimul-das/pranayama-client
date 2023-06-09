@@ -122,6 +122,7 @@ const handleSelectClass = async (classItem) => {
     }
   
     const selectedClass = {
+      classId:classItem._id,
       className: classItem.className,
       instructorName: classItem.instructorName,
       instructorEmail: classItem.instructorEmail,

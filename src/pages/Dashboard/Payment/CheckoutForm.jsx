@@ -4,7 +4,7 @@ import { useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
 
-const CheckoutForm = ({ cart, price }) => {
+const CheckoutForm = ({ itemData, price }) => {
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useAuth();
@@ -80,11 +80,9 @@ const CheckoutForm = ({ cart, price }) => {
                 transactionId: paymentIntent.id,
                 price,
                 date: new Date(),
-                quantity: cart.length,
-                cartItems: cart.map(item => item._id),
-                menuItems: cart.map(item => item.menuItemId),
-                status: 'service pending',
-                itemNames: cart.map(item => item.name)
+                classId:itemData.classId,
+                className:itemData.className,
+                cinstructorName:itemData.instructorName  
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {

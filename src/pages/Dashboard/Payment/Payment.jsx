@@ -94,6 +94,7 @@ const Payment = () => {
             // Handle error fetching item data
         }
     };
+    console.log(itemData )
 
     return (
         <div>
@@ -105,13 +106,13 @@ const Payment = () => {
                     <h2 className="text-3xl">Item ID: {itemId}</h2>
                     <p>Class Name: {itemData.className}</p>
                     <p>Course Price: {itemData.price}</p>
+            <Elements stripe={stripePromise}>
+                <CheckoutForm itemData={itemData} price={itemData.price}/>
+            </Elements>
                 </div>
             ) : (
                 <p>Loading item data...</p>
             )}
-            <Elements stripe={stripePromise}>
-                <CheckoutForm itemData={itemData} price={itemData.price}/>
-            </Elements>
         </div>
     );
 };
