@@ -223,7 +223,7 @@ const CheckoutForm = ({ itemData, price }) => {
           // Handle successful class update
         })
         .catch(error => {
-          console.error(error);
+          console.log(error);
           // Handle error updating class
         });
 
