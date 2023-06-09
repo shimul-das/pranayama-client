@@ -93,7 +93,7 @@ import MyenrolledClass from "../pages/Dashboard/MyenrolledClass/MyenrolledClass"
           element: <MyCart></MyCart>
         },
         {
-          path:'payment',
+          path:'payment/:itemId',
           element:<Payment></Payment>
 
         },
