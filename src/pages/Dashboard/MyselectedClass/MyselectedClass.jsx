@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useEffect } from 'react';
+import Swal from 'sweetalert2';
 
 const MyselectedClasses = () => {
   const [selectedClasses, setSelectedClasses] = useState([]);
@@ -22,6 +23,7 @@ const MyselectedClasses = () => {
   };
 
   const handleDeleteClass = async (classId) => {
+    console.log(classId)
     try {
       await axiosSecure.delete(`/selectclass/${classId}`);
       // Update the selected classes list after successful deletion
@@ -40,9 +42,9 @@ const MyselectedClasses = () => {
         timer: 1500,
         showConfirmButton: false,
       });
-      // Handle error deleting selected class
     }
   };
+  
 
   return (
     <div className='m-5'>
