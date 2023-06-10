@@ -3,16 +3,12 @@ import {
   } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../pages/Home/Home/Home";
-import Menu from "../pages/Menu/Menu/Menu";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
-import Secret from "../pages/Shared/Secret/Secret";
 import Dashboard from "../Layout/Dashboard";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
-import AddItem from "../pages/Dashboard/AddItem/AddItem";
 import AdminRoute from "./AdminRoute";
-import ManageItems from "../pages/Dashboard/ManageItems/ManageItems";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/AdminHome.jsx/AdminHome";
@@ -56,10 +52,6 @@ import MyenrolledClass from "../pages/Dashboard/MyenrolledClass/MyenrolledClass"
         {
           path: 'signup',
           element: <SignUp></SignUp>
-        },
-        {
-          path: 'secret',
-          element: <PrivateRoute><Secret></Secret></PrivateRoute>
         }
       ]
     },
@@ -95,10 +87,6 @@ import MyenrolledClass from "../pages/Dashboard/MyenrolledClass/MyenrolledClass"
         {
           path: 'allusers', 
           element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
-        },
-        {
-          path: 'addItem',
-          element: <AddItem></AddItem>
         },
         {
           path: 'manageclasses',

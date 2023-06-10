@@ -58,16 +58,28 @@
 // };
 
 // export default Dashboard;
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Navigate, Outlet, useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers, FaAtlas, FaOdnoklassniki, FaBookOpen } from 'react-icons/fa';
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 import useStudent from "../hooks/useStudent";
+import { AuthContext } from "../providers/AuthProvider";
+import { useContext } from "react";
 
 const Dashboard = () => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
     const [isStudent] = useStudent();
+    const navigate = useNavigate();
+
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+          .then(() => { 
+            navigate('/')
+          })
+          .catch(error => console.log(error));
+      };
 
     return (
         <div className="drawer drawer-mobile ">
@@ -157,6 +169,9 @@ const Dashboard = () => {
                         <NavLink to="/approvedclass">
                             <FaBookOpen></FaBookOpen> Classes
                         </NavLink>
+                    </li>
+                    <li>
+                       <button className="btn bg-[#278066]" onClick={handleLogOut}>Logout</button>
                     </li>
                 </ul>
             </div>

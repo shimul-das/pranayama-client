@@ -35,8 +35,8 @@ const Instructors = () => {
                             alt={instructor.name}
                             className="w-24 h-24 rounded-full mx-auto mb-4"
                         />
-                        <h3 className="text-xl font-semibold mb-2">{instructor.name}</h3>
-                        <p className="text-gray-600">{instructor.email}</p>
+                        <h3 className="text-xl font-semibold mb-2"><span className="text-orange-600">Name:</span> <span>{instructor.name}</span></h3>
+                        <p className="text-gray-600"><span className="text-xl font-semibold text-emerald-600">Email:</span> {instructor.email}</p>
                     </div>
                 ))}
             </div>

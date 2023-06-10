@@ -42,7 +42,7 @@ const MyClasses = () => {
       <Helmet>
         <title>Pranayama | Instructor Classes</title>
       </Helmet>
-      <h1 className="text-2xl text-center text-blue-600">Total Classes: {classes.length}</h1>
+      <h1 className="text-2xl text-center text-blue-600"><span className=" font-semibold">Total Classes: </span><span className="badge badge-accent text-xl">{classes.length}</span></h1>
       {classes.length === 0 ? (
         <p>No classes found.</p>
       ) : (
@@ -52,12 +52,12 @@ const MyClasses = () => {
               <div className="p-4">
                 <h5 className="font-bold mb-2">Class {index + 1}</h5>
                 <img  src={classItem.image} alt="" />
-                <p className="mb-2 pt-2">Class Name: {classItem.className}</p>
-                <p className="mb-2">Status: {classItem.status}</p>
+                <p className="mb-2 pt-2"><span className="font-bold text-orange-500">Class Name:</span> <span>{classItem.className}</span></p>
+                <p className="mb-2"><span className="font-bold text-emerald-500">Status:</span> <span className="badge badge-accent text-sm font-bold">{classItem.status}</span></p>
                 <p className="mb-2">
-                  Total Enrolled Students: {classItem.enrolledStudent}
+                  <span className="font-bold text-sky-600">Total Enrolled Students:</span> <span className="badge badge-success text-sm font-bold">{classItem.enrolledStudent}</span>
                 </p>
-                <p className="mb-2">
+                <p className="mb-2 font-bold text-red-500">
                   Feedback: {classItem.feedback}
                 </p>
                 {classItem.status === "denied" && (

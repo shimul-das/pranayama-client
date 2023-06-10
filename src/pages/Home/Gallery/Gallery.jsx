@@ -204,39 +204,39 @@ const Gallery = () => {
     const galleryItems = [
         {
             image: "https://img.freepik.com/free-photo/one-hiking-lifestyle-summer-yoga_1150-1002.jpg",
-            caption: "Image 1",
+            caption: "Blissful Breath Yoga",
         },
         {
             image: "https://img.freepik.com/free-photo/adult-woman-practicing-yoga-home_52683-107801.jpg",
-            caption: "Image 2",
+            caption: "Inner Harmony Meditation",
         },
         {
             image: "https://img.freepik.com/free-photo/woman-yoga-mat-relax-park-young-sporty-asian-woman-practicing-yoga-doing-headstand-exercise-working-out-wearing-sportswear-pants-top_1150-44671.jpg",
-            caption: "Image 3",
+            caption: "Tranquil Lotus Yoga",
         },
         {
             image: "https://img.freepik.com/free-photo/meditating-peace-sun-meditate-wellness_1253-755.jpg",
-            caption: "Image 4",
+            caption: "Zen Mindfulness Meditation",
         },
         {
             image: "https://img.freepik.com/free-photo/young-adults-hiking-serene-autumn-forest-generated-by-ai_188544-26130.jpg",
-            caption: "Image 5",
+            caption: "Sacred Serenity Yoga",
         },
         {
             image: "https://img.freepik.com/free-photo/fit-black-woman-practicing-yoga-sitting-with-legs-crossed-sportive-top-leggins-lotus-pose-practicing-calm-mind-harmony-no-stress-life-home-living-room_482257-16235.jpg",
-            caption: "Image 6",
+            caption: "Enlightened Soul Meditation",
         },
         {
             image: "https://img.freepik.com/free-photo/young-woman-horse-rider-pose-grey-studio-background_1163-2460.jpg",
-            caption: "Image 7",
+            caption: "Harmony Flow Yoga",
         },
         {
             image: "https://img.freepik.com/free-vector/silhouette-woman-yoga-pose-sunset-sky_1048-14228.jpg",
-            caption: "Image 8",
+            caption: "Peaceful Presence Meditation",
         },
         {
             image: "https://img.freepik.com/free-photo/group-young-sporty-people-sitting-padmasana-pose_1163-4126.jpg",
-            caption: "Image 9",
+            caption: "Radiant Zen Yoga",
         },
     ];
 
@@ -269,7 +269,7 @@ const Gallery = () => {
                             whileHover={{ scale: 1.1, filter: "brightness(0.8)" }}
                             whileTap={{ scale: 0.9 }}
                         />
-                        <div className="text-center mt-2">{item.caption}</div>
+                        <div className="text-center mt-2 font-semibold text-[#179e91]">{item.caption}</div>
                     </motion.div>
                 ))}
             </motion.div>

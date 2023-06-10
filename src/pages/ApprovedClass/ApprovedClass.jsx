@@ -171,13 +171,13 @@ const ApprovedClass = () => {
                     <p>No classes found.</p>
                 ) : (
                     classes.map((classItem) => (
-                        <div key={classItem._id} className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 p-4 ${classItem.availableSeats === 0 ? "bg-red-200" : ""}`}>
+                        <div key={classItem._id} className={`w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/4 p-4 ${classItem.availableSeats === 0 ? "bg-red-600" : ""}`}>
                             <div className="bg-white border border-purple-600 rounded-lg p-4">
                                 <img src={classItem.image} alt={classItem.name} className="w-full h-40 object-cover mb-4" />
                                 <p className="text-lg font-bold">{classItem.name}</p>
-                                <p>Instructor: {classItem.instructorName}</p>
-                                <p>Available Seats: {classItem.availableSeats}</p>
-                                <p>Price: {classItem.price}</p>
+                                <p><span className="text-lg font-semibold text-orange-600">Instructor Name:</span> <span className="font-semibold">{classItem.instructorName}</span></p>
+                                <p><span className="text-lg font-semibold text-emerald-600">Available Seats:</span> <span className="badge badge-accent">{classItem.availableSeats}</span></p>
+                                <p><span className="text-lg font-semibold text-sky-600">Price:</span> <span className="badge badge-secondary">{classItem.price}$</span></p>
                                 <button
                                     disabled={classItem.availableSeats === 0 || (user && (isAdmin || isInstructor))}
                                     //   disabled={!user || (classItem.availableSeats === 0) || (user && (isAdmin || isInstructor))}
