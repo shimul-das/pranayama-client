@@ -63,7 +63,7 @@ const PopularClasses = () => {
           >
             <img src={cls.image} alt={cls.className} className="w-full h-auto" />
             <p className="mt-2 text-center font-bold text-purple-700">{cls.className}</p>
-            <p className="mt-2 text-center">Students Enrolled: {cls.enrolledStudent}</p>
+            <p className="mt-2 text-center"><span className="text-amber-600">Total Students Enrolled:</span> {cls.enrolledStudent}</p>
           </div>
         ))}
       </div>
