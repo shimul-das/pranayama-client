@@ -3,7 +3,7 @@
 
 // const PopularInstructors = () => {
 //   const { data: instructors = [] } = useQuery(["instructors"], async () => {
-//     const res = await fetch("http://localhost:5000/instructorusers");
+//     const res = await fetch("https://pranayama-server.vercel.app/instructorusers");
 //     const data = await res.json();
 //     return data;
 //   });
@@ -37,7 +37,7 @@
 
 // const PopularInstructors = () => {
 //   const { data: instructors = [] } = useQuery(["instructors"], async () => {
-//     const res = await fetch("http://localhost:5000/instructorusers");
+//     const res = await fetch("https://pranayama-server.vercel.app/instructorusers");
 //     const data = await res.json();
 
 //     // Filter the instructors based on the user role "instructor"
@@ -71,7 +71,7 @@ import { Helmet } from "react-helmet-async";
 
 const PopularInstructors = () => {
   const { data: instructors = [] } = useQuery(["instructors"], async () => {
-    const res = await fetch("http://localhost:5000/instructorusers");
+    const res = await fetch("https://pranayama-server.vercel.app/instructorusers");
     const data = await res.json();
 
     // Filter the instructors based on the user role "instructor"
@@ -92,8 +92,8 @@ const PopularInstructors = () => {
         {popularInstructors.map((instructor) => (
           <div key={instructor._id} className="flex flex-col items-center p-4 border border-purple-600 rounded-lg">
             <img src={instructor.image} alt={instructor.instructorName} className="w-full h-auto" />
-            <p className="mt-2 text-center">Name: {instructor.name}</p>
-            <p className="mt-2 text-center">Email: {instructor.email}</p>
+            <p className="mt-2 text-center"><span className="text-purple-700 font-bold">Name:</span> <span className="text-lg text-slate-700">{instructor.name}</span></p>
+            <p className="mt-2 text-center"><span className="text-amber-600  font-bold">Email:</span> <span className="text-lg text-slate-700">{instructor.email}</span></p>
           </div>
         ))}
       </div>

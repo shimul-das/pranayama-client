@@ -7,7 +7,7 @@ const Instructors = () => {
     useEffect(() => {
         // Fetch user data from the server or API
         // Replace the URL with your actual endpoint for fetching user data
-        fetch("http://localhost:5000/instructorusers")
+        fetch("https://pranayama-server.vercel.app/instructorusers")
             .then((response) => response.json())
             .then((data) => {
                 // Filter the users based on the role "instructor"

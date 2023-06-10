@@ -3,7 +3,7 @@
 
 // const PopularClasses = () => {
 //   const { data: classes = [] } = useQuery(["classes"], async () => {
-//     const res = await fetch("http://localhost:5000/approvedclass");
+//     const res = await fetch("https://pranayama-server.vercel.app/approvedclass");
 //     const data = await res.json();
 //     return data;
 //   });
@@ -39,7 +39,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const PopularClasses = () => {
   const { data: classes = [] } = useQuery(["classes"], async () => {
-    const res = await fetch("http://localhost:5000/approvedclass");
+    const res = await fetch("https://pranayama-server.vercel.app/approvedclass");
     const data = await res.json();
     return data;
   });
@@ -63,7 +63,7 @@ const PopularClasses = () => {
           >
             <img src={cls.image} alt={cls.className} className="w-full h-auto" />
             <p className="mt-2 text-center font-bold text-purple-700">{cls.className}</p>
-            <p className="mt-2 text-center"><span className="text-amber-600">Total Students Enrolled:</span> {cls.enrolledStudent}</p>
+            <p className="mt-2 text-center"><span className="text-amber-600 font-semibold">Total Students Enrolled:</span> <span className="badge badge-accent">{cls.enrolledStudent}</span></p>
           </div>
         ))}
       </div>

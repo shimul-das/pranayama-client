@@ -13,7 +13,7 @@
 //     })
 
 //     const handleMakeAdmin = user =>{
-//         fetch(`http://localhost:5000/users/admin/${user._id}`, {
+//         fetch(`https://pranayama-server.vercel.app/users/admin/${user._id}`, {
 //             method: 'PATCH'
 //         })
 //         .then(res => res.json())
@@ -91,7 +91,7 @@
 //   });
 
 //   const handleMakeRole = (user, role) => {
-//     fetch(`http://localhost:5000/users/role/${user._id}`, {
+//     fetch(`https://pranayama-server.vercel.app/users/role/${user._id}`, {
 //       method: "PATCH",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -201,7 +201,7 @@
 //   });
 
 //   const handleMakeRole = (user, role) => {
-//     fetch(`http://localhost:5000/users/role/${user._id}`, {
+//     fetch(`https://pranayama-server.vercel.app/users/role/${user._id}`, {
 //       method: "PATCH",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -313,7 +313,7 @@ const AllUsers = () => {
   });
 
   const handleMakeRole = (user, role) => {
-    fetch(`http://localhost:5000/users/role/${user._id}`, {
+    fetch(`https://pranayama-server.vercel.app/users/role/${user._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
