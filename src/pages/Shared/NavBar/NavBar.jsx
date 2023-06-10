@@ -787,7 +787,7 @@ import useAdmin from "../../../hooks/useAdmin";
 import { useContext } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 import useravatar from './../../../assets/user-avatar.png';
-import logo from './../../../assets/logo-.png';
+import logo from './../../../assets/logo.png';
 import useStudent from '../../../hooks/useStudent';
 import useInstructor from '../../../hooks/useInstructor';
 
@@ -815,7 +815,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-400 relative z-20 ">
+    <nav className="bg-purple-400 relative z-20 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -826,19 +826,19 @@ const Navbar = () => {
               <div className="ml-10 flex items-baseline space-x-4">
                 <Link
                   to="/"
-                  className="text-purple-800 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Home
                 </Link>
                 <Link
                   to="/instructors"
-                  className="text-gray-100 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Instructors
                 </Link>
                 <Link
                   to="/approvedclass"
-                  className="text-gray-100 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Classes
                 </Link>
@@ -859,7 +859,7 @@ const Navbar = () => {
                       alt="User"
                     />
                     <svg
-                      className="ml-1 h-5 w-5 text-gray-400"
+                      className="ml-1 h-5 w-5 text-white"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"

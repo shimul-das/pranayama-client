@@ -35,7 +35,7 @@
 // export default PopularClasses;
 
 import { useQuery } from "@tanstack/react-query";
-import { Helmet } from "react-helmet-async";
+
 
 const PopularClasses = () => {
   const { data: classes = [] } = useQuery(["classes"], async () => {
@@ -44,22 +44,25 @@ const PopularClasses = () => {
     return data;
   });
 
+
   const approvedClasses = classes.filter((cls) => cls.status === "approved");
   const sortedClasses = approvedClasses.sort((a, b) => b.enrolledStudent - a.enrolledStudent);
   const popularClasses = sortedClasses.slice(0, 6);
 
   return (
     <div className="mx-4 md:mx-20">
-      <h3 className="text-3xl font-semibold my-4">Popular Classes</h3>
+      <h1 className="text-3xl my-10 font-semibold text-center text-purple-700 underline uppercase decoration-wavy">
+        Popular Classes
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {popularClasses.map((cls) => (
           <div
             key={cls._id}
-            className="flex flex-col items-center border border-solid border-purple-600 p-4"
+            className="flex flex-col items-center border border-solid border-purple-600 p-4 rounded-lg"
             style={{ borderColor: "#7E22CE" }}
           >
             <img src={cls.image} alt={cls.className} className="w-full h-auto" />
-            <p className="mt-2 text-center">{cls.className}</p>
+            <p className="mt-2 text-center font-bold text-purple-700">{cls.className}</p>
             <p className="mt-2 text-center">Students Enrolled: {cls.enrolledStudent}</p>
           </div>
         ))}
