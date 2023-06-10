@@ -253,7 +253,7 @@ const Gallery = () => {
                 {galleryItems.map((item, index) => (
                     <motion.div
                         key={index}
-                        className="w-1/4 mx-4 my-2" // Set width to 1/3 of the container's width
+                        className="w-1/4 mx-4 " // Set width to 1/3 of the container's width
                         variants={itemVariants}
                     >
                         <img src={item.image} alt={item.caption} className="w-full" />

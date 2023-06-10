@@ -50,10 +50,7 @@ const PopularInstructors = () => {
   const popularInstructors = sortedInstructors.slice(0, 6);
 
   return (
-    <div>
-      <Helmet>
-        <title>Bistro Boss | Popular Instructors</title>
-      </Helmet>
+    <div className="mx-20">
       <h3 className="text-3xl font-semibold my-4">Popular Instructors</h3>
       <div className="grid grid-cols-3 gap-4">
         {popularInstructors.map((instructor) => (
