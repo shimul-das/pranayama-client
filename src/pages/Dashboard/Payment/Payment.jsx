@@ -101,9 +101,9 @@ const Payment = () => {
             </h1>
             {itemData ? (
                 <div>
-                    <h2 className="text-3xl">Item ID: {itemId}</h2>
-                    <p>Class Name: {itemData.className}</p>
-                    <p>Course Price: {itemData.price}$</p>
+                    <h2><span className="font-bold">Item ID:</span> <span className="text-orange-500">{itemId}</span></h2>
+                    <p><span className="font-bold">Class Name:</span> {itemData.className}</p>
+                    <p><span className="font-bold">Course Price:</span> <span className="badge badge-secondary font-bold">{itemData.price}$</span></p>
             <Elements stripe={stripePromise}>
                 <CheckoutForm itemData={itemData} price={itemData.price}/>
             </Elements>

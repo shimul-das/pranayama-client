@@ -24,6 +24,7 @@ import Instructors from "../pages/Instructors/Instructors";
 import ApprovedClass from "../pages/ApprovedClass/ApprovedClass";
 import MyselectedClass from "../pages/Dashboard/MyselectedClass/MyselectedClass";
 import MyenrolledClass from "../pages/Dashboard/MyenrolledClass/MyenrolledClass";
+import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 
 
 
@@ -72,6 +73,11 @@ import MyenrolledClass from "../pages/Dashboard/MyenrolledClass/MyenrolledClass"
         {
           path:'myenrolledclass',
           element:<StudentRoute><MyenrolledClass></MyenrolledClass></StudentRoute>
+
+        },
+        {
+          path:'paymenthistory',
+          element:<StudentRoute><PaymentHistory></PaymentHistory></StudentRoute>
 
         },
         {

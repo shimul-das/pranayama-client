@@ -136,6 +136,11 @@ const Dashboard = () => {
                                     <FaWallet></FaWallet>My Enrolled Class
                                 </NavLink>
                             </li>
+                            <li>
+                                <NavLink to="/dashboard/paymenthistory">
+                                    <FaWallet></FaWallet>Payment History
+                                </NavLink>
+                            </li>
                         </>
                     ) : isInstructor ? (
                         <>
