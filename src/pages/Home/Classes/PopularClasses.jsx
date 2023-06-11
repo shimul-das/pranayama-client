@@ -37,8 +37,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 
-const PopularClasses = ({darkMode}) => {
-  console.log(darkMode)
+const PopularClasses = () => {
   const { data: classes = [] } = useQuery(["classes"], async () => {
     const res = await fetch("https://pranayama-server.vercel.app/approvedclass");
     const data = await res.json();
@@ -51,7 +50,7 @@ const PopularClasses = ({darkMode}) => {
   const popularClasses = sortedClasses.slice(0, 6);
 
   return (
-    <div  className={`${darkMode ? 'bg-gray-900 text-white' : 'bg-neutral-100'} relative z-20 mx-4 md:mx-20`}>
+    <div  className= "mx-4 md:mx-20">
       <h1 className="text-3xl my-10 font-semibold text-center text-purple-700 underline uppercase decoration-wavy">
         Popular Classes
       </h1>

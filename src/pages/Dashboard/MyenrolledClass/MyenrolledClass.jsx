@@ -37,6 +37,7 @@ const MyenrolledClass = () => {
                 ) : (
                     selectedClasses.map((classItem) => (
                         <div key={classItem._id} className="bg-white rounded-lg p-4 border border-7E22CE">
+                            <p><img src={classItem.image} alt="" /></p>
                             <p>Class Name: {classItem.className}</p>
                             <p>Instructor Name: {classItem.instructorName}</p>
                             <div className="flex justify-between items-center mt-4">

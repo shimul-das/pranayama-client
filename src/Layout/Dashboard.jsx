@@ -75,11 +75,11 @@ const Dashboard = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
         logOut()
-          .then(() => { 
-            navigate('/')
-          })
-          .catch(error => console.log(error));
-      };
+            .then(() => {
+                navigate('/')
+            })
+            .catch(error => console.log(error));
+    };
 
     return (
         <div className="drawer drawer-mobile ">
@@ -93,6 +93,14 @@ const Dashboard = () => {
             <div className="drawer-side bg-[#7E22CE]">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 text-[#F79256]">
+                <div className="rounded-full overflow-hidden mx-auto w-32 h-32">
+                    <img src={user.photoURL} alt="Image" className="w-full h-full object-cover" />
+                </div>
+                <div className="text-center">
+                <p className="text-lg text-[white] mt-4">{user.displayName}</p>
+                <p className="text-base text-[white]">{user.email}</p>
+                <hr className="m-2"></hr>
+                </div>
                     {isAdmin ? (
                         <>
                             <li>
@@ -133,7 +141,7 @@ const Dashboard = () => {
                         <>
                             <li>
                                 <NavLink to="/dashboard/instructorhome">
-                                <FaHome></FaHome> Instructor Home
+                                    <FaHome></FaHome> Instructor Home
                                 </NavLink>
                             </li>
                             <li>
@@ -164,14 +172,14 @@ const Dashboard = () => {
                             <FaOdnoklassniki></FaOdnoklassniki> Instructors
                         </NavLink>
                     </li>
-                    
+
                     <li>
                         <NavLink to="/approvedclass">
                             <FaBookOpen></FaBookOpen> Classes
                         </NavLink>
                     </li>
                     <li>
-                       <button className="btn bg-[#278066]" onClick={handleLogOut}>Logout</button>
+                        <button className="btn bg-[#278066]" onClick={handleLogOut}>Logout</button>
                     </li>
                 </ul>
             </div>

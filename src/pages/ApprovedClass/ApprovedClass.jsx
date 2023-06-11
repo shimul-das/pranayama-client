@@ -175,6 +175,7 @@ const ApprovedClass = () => {
                             <div className="bg-white border border-purple-600 rounded-lg p-4">
                                 <img src={classItem.image} alt={classItem.name} className="w-full h-40 object-cover mb-4" />
                                 <p className="text-lg font-bold">{classItem.name}</p>
+                                <p><span className="text-lg font-semibold text-red-500">Class Name:</span> <span className="font-semibold">{classItem.className}</span></p>
                                 <p><span className="text-lg font-semibold text-orange-600">Instructor Name:</span> <span className="font-semibold">{classItem.instructorName}</span></p>
                                 <p><span className="text-lg font-semibold text-emerald-600">Available Seats:</span> <span className="badge badge-accent">{classItem.availableSeats}</span></p>
                                 <p><span className="text-lg font-semibold text-sky-600">Price:</span> <span className="badge badge-secondary">{classItem.price}$</span></p>

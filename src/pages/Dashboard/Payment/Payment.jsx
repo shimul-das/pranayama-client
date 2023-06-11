@@ -103,7 +103,7 @@ const Payment = () => {
                 <div>
                     <h2 className="text-3xl">Item ID: {itemId}</h2>
                     <p>Class Name: {itemData.className}</p>
-                    <p>Course Price: {itemData.price}</p>
+                    <p>Course Price: {itemData.price}$</p>
             <Elements stripe={stripePromise}>
                 <CheckoutForm itemData={itemData} price={itemData.price}/>
             </Elements>
