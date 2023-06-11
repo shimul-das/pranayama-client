@@ -59,7 +59,7 @@
 
 // export default Dashboard;
 import { NavLink, Navigate, Outlet, useNavigate } from "react-router-dom";
-import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers, FaAtlas, FaOdnoklassniki, FaBookOpen } from 'react-icons/fa';
+import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers, FaAtlas, FaOdnoklassniki, FaBookOpen, FaDollarSign } from 'react-icons/fa';
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 import useStudent from "../hooks/useStudent";
@@ -138,7 +138,7 @@ const Dashboard = () => {
                             </li>
                             <li>
                                 <NavLink to="/dashboard/paymenthistory">
-                                    <FaWallet></FaWallet>Payment History
+                                    <FaDollarSign></FaDollarSign>Payment History
                                 </NavLink>
                             </li>
                         </>

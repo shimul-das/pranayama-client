@@ -1178,10 +1178,10 @@ const ManageClasses = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-75">
           <div className="bg-white p-8 rounded-md">
             <h3 className="text-lg font-semibold mb-4">Send Feedback to Instructor</h3>
-            <p>Class Name: {selectedClass.className}</p>
-            <p>Class ID: {selectedClass._id}</p>
-            <p>Instructor Name: {selectedClass.instructorName}</p>
-            <p>Instructor Email: {selectedClass.instructorEmail}</p>
+            <p><span className="font-bold">Class Name:</span> {selectedClass.className}</p>
+            <p><span className="font-bold">Class ID:</span> {selectedClass._id}</p>
+            <p><span className="font-bold">Instructor Name:</span> {selectedClass.instructorName}</p>
+            <p><span className="font-bold">Instructor Email:</span> {selectedClass.instructorEmail}</p>
             <textarea
               className="w-full h-24 mt-4 p-2 border border-gray-300 rounded-md"
               placeholder="Enter your feedback..."

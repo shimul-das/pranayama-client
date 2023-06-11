@@ -210,6 +210,7 @@ const AllUsers = () => {
           <thead>
             <tr>
               <th>#</th>
+              <th>Image</th>
               <th>Name</th>
               <th>Email</th>
               <th>Role</th>
@@ -221,6 +222,7 @@ const AllUsers = () => {
             {users.map((user, index) => (
               <tr key={user._id}>
                 <th>{index + 1}</th>
+                <td><img src={user.image}></img></td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.role}</td>
