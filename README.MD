@@ -20,4 +20,4 @@
 -Authentication/Authorization: Firebase, JWT.
 # Pranayama Project website Link
  
-## [https://pranayama-49fc7.web.app/login]
+## [https://pranayama-49fc7.web.app]

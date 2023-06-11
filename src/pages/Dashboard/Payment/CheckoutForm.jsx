@@ -400,8 +400,8 @@ const CheckoutForm = ({ itemData, price }) => {
             // Display confirmation message
             Swal.fire({
               icon: 'success',
-              title: 'Payment Successful',
-              text: 'Your payment was successful.',
+              title: 'Your Payment Successful',
+              text: `Your Transaction ID: ${paymentIntent.id}`,
             });
           }
         })
