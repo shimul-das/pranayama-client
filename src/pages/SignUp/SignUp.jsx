@@ -262,7 +262,8 @@ const SignUp = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const [password, setPassword] = useState(""); // Add state for password
+    const [password, setPassword] = useState("");
+    const [error, seterror] = useState('') // Add state for password
 
     const onSubmit = (data) => {
         createUser(data.email, data.password)
@@ -272,7 +273,7 @@ const SignUp = () => {
 
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        const saveUser = { name: data.name, email: data.email,image:data.photoURL, role:"student"};
+                        const saveUser = { name: data.name, email: data.email, image: data.photoURL, role: "student" };
                         fetch("https://pranayama-server.vercel.app/users", {
                             method: "POST",
                             headers: {
@@ -298,7 +299,7 @@ const SignUp = () => {
                     })
                     .catch((error) => console.log(error));
             })
-            .catch((error) => console.log(error));
+            .catch((error) => seterror(error));
     };
 
     return (
@@ -424,7 +425,9 @@ const SignUp = () => {
                             </button>
                         </div>
                     </form>
-
+                    {error && (
+                        <p className="text-red-600">{error.message}</p>
+                    )}
                     <p className="mt-8 text-xs font-light text-center text-gray-700">
                         {" "}
                         Already Have an account?{" "}
